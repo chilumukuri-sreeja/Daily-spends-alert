@@ -1,0 +1,32 @@
+SCOPES:
+  BIGQUERY:
+    - https://www.googleapis.com/auth/bigquery
+  CLOUD_STORAGE:
+    - https://www.googleapis.com/auth/devstorage.read_write
+  PUBSUB:
+    - https://www.googleapis.com/auth/pubsub
+
+ADVERTISER_MASTERLIST: metadata.advertiser_masterlist 
+
+PROJECT_ID: nyo-yoptima
+#DATASET: sdf_line_item
+
+UPLOAD_BUCKET: yo_alerts_bucket
+UPLOAD_PATH: IO_REQUIRED_DAILY_BUDGET
+
+TOPIC_PATH: projects/nyo-yoptima/topics/alerts_email_module
+
+ESCALATION_LEVELS:
+  "1": 0
+  "5": 1
+
+ALERT_DESTINATION_TABLE: nyo-yoptima.metadata.alert_metadata
+
+ALERT_TYPE: Incorrect Daily Budget Alert 
+ALERT_ENTITY: Advertiser
+ALERT_MESSAGE: Daily IO Budget not in sync with NRR for the following insertion orders <<ADVERTISER>> (<<ADVERTISER_ID>>)
+ALERT_SUBJECT: Incorrect Daily Budget Alert <<ADVERTISER>> (<<ADVERTISER_ID>>)
+ALERT_SUBTEXT: Please take the necessary actions to resolve this issue.
+ALERT_HEADER: null
+ALERT_FOOTER: >
+  * If you see this message even after resolution of the error please contact products@yoptima.com
